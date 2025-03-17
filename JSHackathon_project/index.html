@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Jirani Connectors - Where Connections Find You</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        width: 100%;
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .search-bar {
+        width: 200px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background-color: white;
+        border-radius: 30px;
+        padding-left: 15px;
+        font-size: 13.4px;
+      }
+
+      .search-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .search-button:hover {
+        background-color: #0056b3;
+      }
+
+      footer {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        text-align: center;
+        width: 100%;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #007bff;
+        margin: 0 15px;
+        font-size: 16px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Welcome to Jirani Connectors - Where Connections Find You</h1>
+
+    <!-- Search Bar with Categories -->
+    <div class="search-container">
+      <select id="searchCategory" class="search-bar">
+        <option value="" disabled selected>Select Category</option>
+        <option value="apartment">Apartment</option>
+        <option value="service">Service</option>
+      </select>
+      <button class="search-button" id="searchBtn">Search</button>
+    </div>
+
+    <footer>
+      &copy; 2025 Jirani Connectors. All rights reserved. |
+      <a href="#">Privacy Policy</a>
+    </footer>
+
+    <script>
+      document
+        .getElementById("searchBtn")
+        .addEventListener("click", function () {
+          let selectedCategory =
+            document.getElementById("searchCategory").value;
+
+          if (!selectedCategory) {
+            alert("Please select a category before searching!");
+            return;
+          }
+
+          if (selectedCategory === "apartment") {
+            window.location.href = "apartment.html"; // Redirect to Apartments Page
+          } else if (selectedCategory === "service") {
+            window.location.href = "services.html"; // Redirect to Services Page
+          }
+        });
+    </script>
+  </body>
+</html>
